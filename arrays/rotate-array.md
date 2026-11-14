@@ -60,6 +60,58 @@ var rotate = function(nums, k) {
 - `k > nums.length` → Use modulo.
 - Single-element array → No change.
 
-## Further Optimization
+## Optimized Approach — Three Reversals
 
-Use the three-reversal technique to achieve **O(n) time** and **O(1) auxiliary space**.
+Rotate right by `k = 2`.
+
+```javascript
+Original:  [1, 2, 3, 4, 5]
+Reverse 1: [5, 4, 3, 2, 1]
+Reverse 2: [4, 5, 3, 2, 1]
+Reverse 3: [4, 5, 1, 2, 3]
+```
+
+### JavaScript Solution
+
+```javascript
+var rotate = function(nums, k) {
+    let n = nums.length;
+    if (n === 0) return;
+
+    k = k % n;
+
+    function reverse(nums, left, right) {
+        while (left < right) {
+            let temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+
+            left++;
+            right--;
+        }
+    }
+
+    reverse(nums, 0, n - 1);
+    reverse(nums, 0, k - 1);
+    reverse(nums, k, n - 1);
+};
+```
+
+### How It Works
+
+1. Reverse the entire array.
+2. Reverse the first `k` elements.
+3. Reverse the remaining elements.
+
+### Complexity
+
+- **Time:** O(n) — three linear reversals.
+- **Auxiliary Space:** O(1) — in-place swaps.
+
+### Key Learnings
+
+- Reverse using two pointers (`left`, `right`).
+- Swap while `left < right`.
+- Use `k % n` to handle large rotation counts.
+- Three reversals avoid repeated shifting.
+- Modify the original array in-place.
