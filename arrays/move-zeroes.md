@@ -1,35 +1,32 @@
-# LeetCode #283 — Move Zeroes
+# Move Zeroes — LeetCode 283
 
-**Problem:** https://leetcode.com/problems/move-zeroes/  
-**Difficulty:** Easy  
-**Status:** Accepted — Solved with Hints  
-**Pattern:** Two Pointers (Read/Write)
+**Difficulty:** Easy · **Technique:** Read/write two pointers  
+**Problem:** [Move Zeroes](https://leetcode.com/problems/move-zeroes/)  
+**Implementation:** [move-zeroes.js](move-zeroes.js)
+
+## Goal
+
+Move all zeros to the end of the same array, preserving the relative order of non-zero elements.
+
+**Example:** `[0, 1, 0, 3, 12]` → `[1, 3, 12, 0, 0]`
 
 ## Approach
-1. Initialize `k = 0` for the next non-zero position.
-2. Use `i` to scan all elements.
-3. If `nums[i] !== 0`, store it at `nums[k]`, then increment `k`.
-4. Fill positions from `k` to the end with zeros.
 
-## Example
-```javascript
-Input:       [0, 1, 0, 3, 12]
-First pass:  [1, 3, 12, 3, 12]
-Second pass: [1, 3, 12, 0, 0]
-```
+1. Keep `k` as the next position for a non-zero value.
+2. Scan with `i`. For each non-zero value, assign `nums[k] = nums[i]`, then increment `k`.
+3. Fill the remaining positions, from `k` onward, with zeros.
+
+The first pass preserves order because values are written in the order encountered. Writing is safe because `k <= i` throughout the scan.
 
 ## Complexity
-- **Time:** O(n) — two sequential loops.
-- **Auxiliary space:** O(1) — no additional array.
 
-## Edge Cases
-- All zeros: `[0, 0, 0]`
-- No zeros: `[1, 2, 3]`
-- Single element: `[0]` or `[5]`
-- Zeros at the beginning or end
+- **Time:** `O(n)` — two consecutive passes over the array.
+- **Auxiliary space:** `O(1)` — the array is updated in place.
 
-## Key Learnings
-- `k = 0` because no non-zero elements are initially placed.
-- Preserve the relative order of non-zero elements.
-- Overwriting in the first pass is safe because `k <= i`.
-- Modify `nums` in-place; no return value is needed.
+## Edge cases
+
+- All zeros or no zeros.
+- A single-element array.
+- Zeros at either end or between non-zero values.
+
+**Key takeaway:** `k` is the next write index; it does not need to point to a zero before writing.

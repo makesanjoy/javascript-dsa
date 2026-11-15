@@ -1,72 +1,33 @@
-# Two Pointers — Read/Write Pattern
+# Two Pointers in Arrays
 
-Use two pointers to read and update an array in-place.
+Two-pointer techniques maintain two positions in an array to process data efficiently, often without allocating another array.
 
-- `i` reads the current element.
-- `k` marks where the next unique element belongs.
-- `nums[k - 1]` is the last unique value already stored.
+## Read/write pointers: Remove Duplicates
 
-## Completed Problem
-[LeetCode #26 — Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+**Problem:** [LeetCode 26 — Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) · **Difficulty:** Easy  
+**Implementation:** [remove-duplicates-sorted-array.js](remove-duplicates-sorted-array.js)
 
-**Status:** Accepted — Solved with Hints
+The input is sorted. Retain each distinct value once in the first `k` positions and return `k`.
 
-## Approach
-1. If the array is empty, return `0`.
-2. Start with `k = 1`: the first element is already unique.
-3. Traverse from index `1`.
-4. If `nums[i] !== nums[k - 1]`, write `nums[i]` at `nums[k]` and increment `k`.
-5. Return `k` (the number of unique elements).
+1. Return `0` for an empty array; otherwise set `k = 1`.
+2. Scan from `i = 1`. If `nums[i] !== nums[k - 1]`, write the value to `nums[k]` and increment `k`.
+3. Return `k`. Only the first `k` positions are part of the result.
 
-**Time:** O(n) — one traversal.  
-**Auxiliary space:** O(1) — no extra array.
+**Example:** `[1, 1, 2, 2, 3]` → `k = 3`, first three values `[1, 2, 3]`.
 
-## Edge Cases
-- All duplicates
-- No duplicates
-- Single-element array
-- Negative values
-- Empty array (handled for robustness)
+**Invariant:** `nums[0...k-1]` contains the unique values seen so far, in sorted order.
 
-## Key Learning
-For a sorted array, compare the current element with the **last unique element**, not the next element. `k` tracks both the unique count and the next write position.
+**Complexity:** `O(n)` time, `O(1)` auxiliary space.
 
----
+**Edge cases:** Empty input, all duplicates, no duplicates, negative values.
 
-## Backward Two Pointers — Merge Sorted Array
+## Backward pointers: Merge Sorted Array
 
-**Problem:** [LeetCode #88 — Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+**Problem:** [LeetCode 88 — Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) · **Difficulty:** Easy
 
-### When to use
+`nums1` has `m` valid sorted values followed by room for `n` values from sorted `nums2`. Merge into `nums1` in place.
 
-When two arrays are sorted and the destination array has extra space at the end.
-
-**Why backward?** To avoid overwriting elements that haven't been processed.
-
-### Three Pointers
-
-- `i = m - 1` — Last valid element of `nums1`.
-- `j = n - 1` — Last element of `nums2`.
-- `k = m + n - 1` — Last position available for writing.
-
-### Example
-
-```javascript
-nums1 = [1, 3, 0, 0];
-nums2 = [2, 4];
-m = 2;
-n = 2;
-```
-
-| Step | Compare | Write | Move |
-|---|---|---|---|
-| 1 | 3 vs 4 | `nums1[3] = 4` | `j--`, `k--` |
-| 2 | 3 vs 2 | `nums1[2] = 3` | `i--`, `k--` |
-| 3 | 1 vs 2 | `nums1[1] = 2` | `j--`, `k--` |
-
-Final array: `[1, 2, 3, 4]`
-
-### JavaScript Solution
+Initialize `i = m - 1`, `j = n - 1`, and `k = m + n - 1`. Compare values from the end and write the larger one to `nums1[k]`. Continue until one source is exhausted, then copy any remaining `nums2` values. Remaining `nums1` values are already correctly placed.
 
 ```javascript
 var merge = function(nums1, m, nums2, n) {
@@ -76,39 +37,22 @@ var merge = function(nums1, m, nums2, n) {
 
     while (i >= 0 && j >= 0) {
         if (nums1[i] > nums2[j]) {
-            nums1[k] = nums1[i];
-            i--;
+            nums1[k--] = nums1[i--];
         } else {
-            nums1[k] = nums2[j];
-            j--;
+            nums1[k--] = nums2[j--];
         }
-        k--;
     }
 
     while (j >= 0) {
-        nums1[k] = nums2[j];
-        j--;
-        k--;
+        nums1[k--] = nums2[j--];
     }
 };
 ```
 
-### Complexity
+**Example:** `nums1 = [1, 3, 0, 0]`, `m = 2`, `nums2 = [2, 4]`, `n = 2` → `[1, 2, 3, 4]`.
 
-- Time: **O(m + n)**
-- Auxiliary space: **O(1)**
+**Complexity:** `O(m + n)` time, `O(1)` auxiliary space.
 
-### Edge Cases
+**Edge cases:** `m = 0`, `n = 0`, duplicates, and valid zero values in the sorted inputs.
 
-- `m = 0`: Copy all elements from `nums2`.
-- `n = 0`: `nums1` remains unchanged.
-- Duplicate elements are preserved.
-- Zero is a valid array element when included in the first `m` or `n` values.
-
-### Key Learnings
-
-1. Use `while (i >= 0 && j >= 0)` while both arrays have elements to compare.
-2. Always decrement `k` after writing.
-3. Copy any remaining elements of `nums2`.
-4. Remaining elements of `nums1` are already in place.
-5. No return statement is required.
+**Key takeaway:** Write from the end when filling from the front could overwrite unprocessed values.

@@ -1,21 +1,30 @@
-# Prefix Sum — Range Sum Query (Immutable)
+# Range Sum Query — LeetCode 303
 
-**Problem:** [LeetCode #303 — Range Sum Query (Immutable)](https://leetcode.com/problems/range-sum-query-immutable/)  
-**Difficulty:** Easy  
-**Pattern:** Prefix Sum
+**Difficulty:** Easy · **Technique:** Prefix sum  
+**Problem:** [Range Sum Query — Immutable](https://leetcode.com/problems/range-sum-query-immutable/)
 
-## Concept
+## Goal
 
-Prefix Sum stores cumulative sums so repeated sums of contiguous ranges can be answered in O(1) time after O(n) preprocessing.
+Answer repeated sums of inclusive index ranges, `left` through `right`, on an array that does not change.
 
-Start with `0`. Then `prefix[k]` represents the sum of the **first k elements**.
+## Approach
 
-```javascript
+Build a prefix array beginning with zero. `prefix[k]` stores the sum of the **first `k` elements**, so it has `n + 1` entries.
+
+```text
 nums   = [3, 2, 5, 1]
 prefix = [0, 3, 5, 10, 11]
 ```
 
-## JavaScript Solution
+The inclusive sum is:
+
+```text
+prefix[right + 1] - prefix[left]
+```
+
+For `sumRange(1, 2)`, the result is `prefix[3] - prefix[1] = 10 - 3 = 7`.
+
+## JavaScript solution
 
 ```javascript
 var NumArray = function(nums) {
@@ -31,37 +40,15 @@ NumArray.prototype.sumRange = function(left, right) {
 };
 ```
 
-## Why the Formula Works
-
-```javascript
-sumRange(left, right) = prefix[right + 1] - prefix[left]
-```
-
-- `prefix[right + 1]` includes every element **through** index `right`.
-- `prefix[left]` is the sum of everything **before** index `left`, which we subtract.
-- The initial `0` makes this work even when `left === 0`.
-
-Example:
-
-```javascript
-nums   = [3, 2, 5, 1]
-prefix = [0, 3, 5, 10, 11]
-
-// sumRange(1, 2) = 2 + 5 = 7
-// prefix[3] - prefix[1] = 10 - 3 = 7
-```
-
 ## Complexity
 
-- **Constructor:** O(n) time, O(n) auxiliary space for the prefix array.
-- **sumRange(left, right):** O(1) time, O(1) additional space.
+- **Construction:** `O(n)` time and `O(n)` auxiliary space.
+- **Each `sumRange` call:** `O(1)` time and `O(1)` additional space.
 
-## Edge Cases & Key Learnings
+## Edge cases
 
-- **Range starts at 0:** `sumRange(0, 2)` works because `prefix[0] = 0`.
-- **Single element:** `sumRange(2, 2)` returns that element.
-- **Negative values and zero:** Prefix sums still work.
-- **Immutable array:** Build prefix sums once, then reuse them for many queries.
-- **JavaScript constructor:** Store the prefix array as `this.prefix` so the `sumRange` method can access it.
+- A range beginning at index `0` (`prefix[0] = 0`).
+- A single-element range (`left === right`).
+- Negative values and zeros.
 
-**Remember:** `prefix[k]` is the sum of the **first k elements**, not the sum through index `k`.
+**Key takeaway:** The leading zero eliminates special handling for ranges that start at the beginning of the array.

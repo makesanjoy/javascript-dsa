@@ -1,117 +1,75 @@
-# Array Rotation — LeetCode #189
+# Rotate Array — LeetCode 189
 
-**Problem:** [Rotate Array](https://leetcode.com/problems/rotate-array/)  
-**Difficulty:** Medium  
-**Pattern:** In-place Rotation
+**Difficulty:** Medium · **Technique:** In-place array rotation  
+**Problem:** [Rotate Array](https://leetcode.com/problems/rotate-array/)
 
-## Concept
+## Goal
 
-Right rotation moves elements toward the right, wrapping the last element to the beginning.
+Rotate an array to the right by `k` positions, modifying the original array.
 
-## Example
+**Example:** `[1, 2, 3, 4, 5]`, `k = 2` → `[4, 5, 1, 2, 3]`
 
-```javascript
-nums = [1, 2, 3, 4, 5]
-k = 2
+Normalize rotations with `k %= nums.length` for non-empty arrays: rotating by the array length has no effect.
 
-Rotation 1: [5, 1, 2, 3, 4]
-Rotation 2: [4, 5, 1, 2, 3]
-```
+## Approach 1: Repeated shifting
 
-## JavaScript Solution — Repeated Shifting
+Save the last element, shift everything else one position to the right, and place the saved value at index `0`. Repeat `k` times.
 
 ```javascript
 var rotate = function(nums, k) {
-    let numsLength = nums.length;
-    if (numsLength === 0) return;
+    const n = nums.length;
+    if (n === 0) return;
+    k %= n;
 
-    k = k % numsLength;
-
-    while (k > 0) {
-        let temp = nums[numsLength - 1];
-
-        for (let i = numsLength - 1; i > 0; i--) {
+    for (let step = 0; step < k; step++) {
+        const last = nums[n - 1];
+        for (let i = n - 1; i > 0; i--) {
             nums[i] = nums[i - 1];
         }
-
-        nums[0] = temp;
-        k--;
+        nums[0] = last;
     }
 };
 ```
 
-## Key Learnings
+**Complexity:** `O(n × (k mod n))` time, worst-case `O(n²)`; `O(1)` auxiliary space.
 
-- Save the last element before shifting.
-- Traverse backward to avoid overwriting values.
-- `%` returns the remainder.
-- `k % nums.length` avoids unnecessary full rotations.
-- Modify the original array without creating another array.
+## Approach 2: Three reversals
 
-## Complexity
+Reverse the whole array, then reverse the first `k` elements and the remaining `n - k` elements.
 
-- **Time:** O(n × (k % n)) after normalization for non-empty arrays; worst case O(n²).
-- **Auxiliary Space:** O(1).
-
-## Edge Cases
-
-- `k = 0` → No change.
-- `k = nums.length` → Original array.
-- `k > nums.length` → Use modulo.
-- Single-element array → No change.
-
-## Optimized Approach — Three Reversals
-
-Rotate right by `k = 2`.
-
-```javascript
-Original:  [1, 2, 3, 4, 5]
-Reverse 1: [5, 4, 3, 2, 1]
-Reverse 2: [4, 5, 3, 2, 1]
-Reverse 3: [4, 5, 1, 2, 3]
+```text
+Original:        [1, 2, 3, 4, 5]
+Reverse all:     [5, 4, 3, 2, 1]
+Reverse first 2: [4, 5, 3, 2, 1]
+Reverse rest:    [4, 5, 1, 2, 3]
 ```
-
-### JavaScript Solution
 
 ```javascript
 var rotate = function(nums, k) {
-    let n = nums.length;
+    const n = nums.length;
     if (n === 0) return;
+    k %= n;
 
-    k = k % n;
-
-    function reverse(nums, left, right) {
+    function reverse(left, right) {
         while (left < right) {
-            let temp = nums[left];
-            nums[left] = nums[right];
-            nums[right] = temp;
-
+            [nums[left], nums[right]] = [nums[right], nums[left]];
             left++;
             right--;
         }
     }
 
-    reverse(nums, 0, n - 1);
-    reverse(nums, 0, k - 1);
-    reverse(nums, k, n - 1);
+    reverse(0, n - 1);
+    reverse(0, k - 1);
+    reverse(k, n - 1);
 };
 ```
 
-### How It Works
+**Complexity:** `O(n)` time, `O(1)` auxiliary space.
 
-1. Reverse the entire array.
-2. Reverse the first `k` elements.
-3. Reverse the remaining elements.
+## Edge cases
 
-### Complexity
+- `k = 0` or a multiple of the array length.
+- `k > nums.length`.
+- An empty array or a single-element array.
 
-- **Time:** O(n) — three linear reversals.
-- **Auxiliary Space:** O(1) — in-place swaps.
-
-### Key Learnings
-
-- Reverse using two pointers (`left`, `right`).
-- Swap while `left < right`.
-- Use `k % n` to handle large rotation counts.
-- Three reversals avoid repeated shifting.
-- Modify the original array in-place.
+**Key takeaway:** Reversal avoids the repeated full-array shifts required by the simpler approach.
