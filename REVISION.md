@@ -14,6 +14,7 @@ Use this checklist to revisit problems without consulting the solution. The goal
 | [Two Sum — 1](https://leetcode.com/problems/two-sum/) | Hash map | Why check for the complement before inserting? |
 | [Range Sum Query — 303](https://leetcode.com/problems/range-sum-query-immutable/) | Prefix sum | Why is the answer `prefix[right + 1] - prefix[left]`? |
 | [Maximum Subarray — 53](https://leetcode.com/problems/maximum-subarray/) | Kadane's algorithm | When should a new subarray start instead of extending the previous one? |
+| [Maximum Average Subarray I — 643](https://leetcode.com/problems/maximum-average-subarray-i/) | Fixed-size sliding window | Why does the sliding loop start at `k`, and why is the outgoing index `i - k`? |
 
 ## Review checklist
 

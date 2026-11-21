@@ -12,7 +12,7 @@ Use these clues to select a starting approach for an array problem. They are heu
 | Hash map | Look up an index, frequency, or complement | Store key–value associations in `Map` | [1 — Two Sum](https://leetcode.com/problems/two-sum/) |
 | Prefix sum | Answer repeated sums over contiguous ranges | Precompute cumulative sums and subtract | [303 — Range Sum Query](https://leetcode.com/problems/range-sum-query-immutable/) |
 | Kadane's algorithm | Maximum sum of a contiguous subarray | Track the best sum ending at each position | [53 — Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) |
-| Sliding window | Fixed-size or variable-size contiguous segments | Update a moving range instead of recomputing it | [209 — Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) |
+| Sliding window | Fixed-size or variable-size contiguous segments | Update a moving range instead of recomputing it | [643 — Maximum Average Subarray I (fixed size)](https://leetcode.com/problems/maximum-average-subarray-i/), [209 — Minimum Size Subarray Sum (variable size)](https://leetcode.com/problems/minimum-size-subarray-sum/) |
 
 ## Quick examples
 

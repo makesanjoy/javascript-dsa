@@ -23,6 +23,7 @@ Each problem note focuses on the approach, complexity, edge cases, and the reaso
 | Hash maps | [Two Sum](arrays/hash-map.md) | [LeetCode 1](https://leetcode.com/problems/two-sum/) |
 | Prefix sums | [Range Sum Query — Immutable](arrays/prefix-sum.md) | [LeetCode 303](https://leetcode.com/problems/range-sum-query-immutable/) |
 | Kadane's algorithm | [Maximum Subarray](arrays/maximum-subarray.md) · [JavaScript](arrays/maximum-subarray.js) | [LeetCode 53](https://leetcode.com/problems/maximum-subarray/) |
+| Fixed-size sliding window | [Maximum Average Subarray I](arrays/maximum-average-subarray.md) · [JavaScript](arrays/maximum-average-subarray.js) | [LeetCode 643](https://leetcode.com/problems/maximum-average-subarray-i/) |
 
 For a broader overview, see [Array Patterns](arrays/array-patterns.md).
 
