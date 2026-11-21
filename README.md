@@ -22,6 +22,7 @@ Each problem note focuses on the approach, complexity, edge cases, and the reaso
 | Array rotation | [Rotate Array](arrays/rotate-array.md) | [LeetCode 189](https://leetcode.com/problems/rotate-array/) |
 | Hash maps | [Two Sum](arrays/hash-map.md) | [LeetCode 1](https://leetcode.com/problems/two-sum/) |
 | Prefix sums | [Range Sum Query — Immutable](arrays/prefix-sum.md) | [LeetCode 303](https://leetcode.com/problems/range-sum-query-immutable/) |
+| Kadane's algorithm | [Maximum Subarray](arrays/maximum-subarray.md) · [JavaScript](arrays/maximum-subarray.js) | [LeetCode 53](https://leetcode.com/problems/maximum-subarray/) |
 
 For a broader overview, see [Array Patterns](arrays/array-patterns.md).
 

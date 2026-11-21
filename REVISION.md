@@ -13,6 +13,7 @@ Use this checklist to revisit problems without consulting the solution. The goal
 | [Rotate Array — 189](https://leetcode.com/problems/rotate-array/) | Rotation / reversal | What is the complexity of repeated shifting versus reversal? |
 | [Two Sum — 1](https://leetcode.com/problems/two-sum/) | Hash map | Why check for the complement before inserting? |
 | [Range Sum Query — 303](https://leetcode.com/problems/range-sum-query-immutable/) | Prefix sum | Why is the answer `prefix[right + 1] - prefix[left]`? |
+| [Maximum Subarray — 53](https://leetcode.com/problems/maximum-subarray/) | Kadane's algorithm | When should a new subarray start instead of extending the previous one? |
 
 ## Review checklist
 
