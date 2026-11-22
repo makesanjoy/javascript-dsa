@@ -18,6 +18,12 @@ Use this checklist to revisit problems without consulting the solution. The goal
 | [Maximum Number of Vowels — 1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | Fixed-size sliding window | Why must the outgoing character be checked when the window slides? |
 | [Minimum Size Subarray Sum — 209](https://leetcode.com/problems/minimum-size-subarray-sum/) | Variable-size sliding window | Why can each element enter and leave the window at most once? |
 
+## String practice
+
+| Problem | Technique | Self-check |
+| --- | --- | --- |
+| [Longest Substring Without Repeating Characters — 3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Variable-size sliding window + Map | Why must `left` never move backward? |
+
 ## Review checklist
 
 - [ ] Solve the problem again without looking at the previous implementation.

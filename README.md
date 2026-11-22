@@ -26,6 +26,7 @@ Each problem note focuses on the approach, complexity, edge cases, and the reaso
 | Fixed-size sliding window | [Maximum Average Subarray I](arrays/maximum-average-subarray.md) · [JavaScript](arrays/maximum-average-subarray.js) | [LeetCode 643](https://leetcode.com/problems/maximum-average-subarray-i/) |
 | Fixed-size sliding window | [Maximum Number of Vowels in a Substring](arrays/maximum-vowels-substring.md) · [JavaScript](arrays/maximum-vowels-substring.js) | [LeetCode 1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) |
 | Variable-size sliding window | [Minimum Size Subarray Sum](arrays/minimum-size-subarray-sum.md) · [JavaScript](arrays/minimum-size-subarray-sum.js) | [LeetCode 209](https://leetcode.com/problems/minimum-size-subarray-sum/) |
+| Variable-size sliding window · Strings | [Longest Substring Without Repeating Characters](strings/longest-substring-without-repeating-characters.md) · [JavaScript](strings/longest-substring-without-repeating-characters.js) | [LeetCode 3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) |
 
 For a broader overview, see [Array Patterns](arrays/array-patterns.md).
 
