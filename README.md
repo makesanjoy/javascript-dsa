@@ -25,6 +25,7 @@ Each problem note focuses on the approach, complexity, edge cases, and the reaso
 | Kadane's algorithm | [Maximum Subarray](arrays/maximum-subarray.md) · [JavaScript](arrays/maximum-subarray.js) | [LeetCode 53](https://leetcode.com/problems/maximum-subarray/) |
 | Fixed-size sliding window | [Maximum Average Subarray I](arrays/maximum-average-subarray.md) · [JavaScript](arrays/maximum-average-subarray.js) | [LeetCode 643](https://leetcode.com/problems/maximum-average-subarray-i/) |
 | Fixed-size sliding window | [Maximum Number of Vowels in a Substring](arrays/maximum-vowels-substring.md) · [JavaScript](arrays/maximum-vowels-substring.js) | [LeetCode 1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) |
+| Variable-size sliding window | [Minimum Size Subarray Sum](arrays/minimum-size-subarray-sum.md) · [JavaScript](arrays/minimum-size-subarray-sum.js) | [LeetCode 209](https://leetcode.com/problems/minimum-size-subarray-sum/) |
 
 For a broader overview, see [Array Patterns](arrays/array-patterns.md).
 

@@ -16,6 +16,7 @@ Use this checklist to revisit problems without consulting the solution. The goal
 | [Maximum Subarray — 53](https://leetcode.com/problems/maximum-subarray/) | Kadane's algorithm | When should a new subarray start instead of extending the previous one? |
 | [Maximum Average Subarray I — 643](https://leetcode.com/problems/maximum-average-subarray-i/) | Fixed-size sliding window | Why does the sliding loop start at `k`, and why is the outgoing index `i - k`? |
 | [Maximum Number of Vowels — 1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | Fixed-size sliding window | Why must the outgoing character be checked when the window slides? |
+| [Minimum Size Subarray Sum — 209](https://leetcode.com/problems/minimum-size-subarray-sum/) | Variable-size sliding window | Why can each element enter and leave the window at most once? |
 
 ## Review checklist
 
