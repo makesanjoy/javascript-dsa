@@ -68,6 +68,49 @@ Auxiliary space is O(1) because sorting uses only a few variables and modifies t
 - Duplicates: [3, 1, 3] → [1, 3, 3]
 - Negative numbers: [-1, -5, 2] → [-5, -1, 2]
 
+## When to Use Bubble Sort
+
+Bubble Sort is primarily useful for learning sorting fundamentals and working with very small datasets. It is rarely preferred in production.
+
+### Suitable Use Cases
+
+1. **DSA learning:** Understand comparisons, swaps, nested loops, and complexity.
+2. **Very small arrays:** Acceptable when performance is not critical.
+3. **Nearly sorted arrays:** Early exit can avoid unnecessary passes, although Insertion Sort is often more efficient.
+4. **Limited auxiliary memory:** Sorts in place using O(1) extra space.
+5. **Stable sorting:** Preserves the order of equal elements because equal values are not swapped.
+
+### When to Avoid Bubble Sort
+
+Avoid Bubble Sort for large datasets or performance-critical applications because its average and worst-case time complexity is O(n²).
+
+### Comparison with Other Sorting Algorithms
+
+| Algorithm | Average Time | Typical Use |
+|---|---|---|
+| Bubble Sort | O(n²) | Learning and tiny inputs |
+| Insertion Sort | O(n²) | Small or nearly sorted arrays |
+| Merge Sort | O(n log n) | Stable, efficient sorting |
+| Quick Sort | O(n log n) | General-purpose sorting |
+
+### Sorting in JavaScript
+
+For production applications, generally prefer JavaScript's built-in `sort()` method.
+
+```javascript
+const arr = [5, 3, 1, 6, 10];
+
+arr.sort((a, b) => a - b);
+
+console.log(arr); // [1, 3, 5, 6, 10]
+```
+
+The numeric comparator is important because JavaScript's default sorting compares values as strings.
+
+## Interview Takeaway
+
+Understand Bubble Sort's adjacent swapping, early-exit optimization, O(n²) worst-case time, and O(1) auxiliary space. Insertion Sort is often a better alternative for small or nearly sorted arrays.
+
 ## Key Takeaways
 
 - Adjacent elements are compared and swapped.
