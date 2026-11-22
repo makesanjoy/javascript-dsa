@@ -24,6 +24,7 @@ Each problem note focuses on the approach, complexity, edge cases, and the reaso
 | Prefix sums | [Range Sum Query — Immutable](arrays/prefix-sum.md) | [LeetCode 303](https://leetcode.com/problems/range-sum-query-immutable/) |
 | Kadane's algorithm | [Maximum Subarray](arrays/maximum-subarray.md) · [JavaScript](arrays/maximum-subarray.js) | [LeetCode 53](https://leetcode.com/problems/maximum-subarray/) |
 | Fixed-size sliding window | [Maximum Average Subarray I](arrays/maximum-average-subarray.md) · [JavaScript](arrays/maximum-average-subarray.js) | [LeetCode 643](https://leetcode.com/problems/maximum-average-subarray-i/) |
+| Fixed-size sliding window | [Maximum Number of Vowels in a Substring](arrays/maximum-vowels-substring.md) · [JavaScript](arrays/maximum-vowels-substring.js) | [LeetCode 1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) |
 
 For a broader overview, see [Array Patterns](arrays/array-patterns.md).
 
