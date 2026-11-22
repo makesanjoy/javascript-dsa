@@ -24,6 +24,12 @@ Use this checklist to revisit problems without consulting the solution. The goal
 | --- | --- | --- |
 | [Longest Substring Without Repeating Characters — 3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Variable-size sliding window + Map | Why must `left` never move backward? |
 
+## Sorting practice
+
+| Algorithm | Technique | Self-check |
+| --- | --- | --- |
+| [Bubble Sort](sorting/bubble-sort.md) | Adjacent comparison and swapping | Why does early exit improve best-case time to O(n)? |
+
 ## Review checklist
 
 - [ ] Solve the problem again without looking at the previous implementation.
