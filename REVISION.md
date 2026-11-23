@@ -29,6 +29,7 @@ Use this checklist to revisit problems without consulting the solution. The goal
 | Algorithm | Technique | Self-check |
 | --- | --- | --- |
 | [Bubble Sort](sorting/bubble-sort.md) | Adjacent comparison and swapping | Why does early exit improve best-case time to O(n)? |
+| [Selection Sort](sorting/selection-sort.md) | Minimum element selection and swapping | Why does it take O(n²) time even on sorted input, and how does it minimize swaps? |
 
 ## Review checklist
 
