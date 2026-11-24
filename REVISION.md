@@ -30,6 +30,7 @@ Use this checklist to revisit problems without consulting the solution. The goal
 | --- | --- | --- |
 | [Bubble Sort](sorting/bubble-sort.md) | Adjacent comparison and swapping | Why does early exit improve best-case time to O(n)? |
 | [Selection Sort](sorting/selection-sort.md) | Minimum element selection and swapping | Why does it take O(n²) time even on sorted input, and how does it minimize swaps? |
+| [Merge Sort](sorting/merge-sort.md) | Divide and Conquer + Two Pointers | Why is time O(n log n), space O(n), and how does <= maintain stability? |
 
 ## Review checklist
 

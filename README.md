@@ -18,6 +18,7 @@ Each problem note focuses on the approach, complexity, edge cases, and the reaso
 | Array traversal | [Largest element](arrays/largest-element.md) · [JavaScript](arrays/largest-element.js) | Foundational exercise |
 | Sorting | [Bubble Sort](sorting/bubble-sort.md) · [JavaScript](sorting/bubble-sort.js) | Foundational sorting exercise |
 | Sorting | [Selection Sort](sorting/selection-sort.md) · [JavaScript](sorting/selection-sort.js) | Foundational sorting exercise |
+| Sorting | [Merge Sort](sorting/merge-sort.md) · [JavaScript](sorting/merge-sort.js) | Divide and Conquer |
 | Read/write two pointers | [Remove Duplicates from Sorted Array](arrays/two-pointers.md#readwrite-pointers-remove-duplicates) · [JavaScript](arrays/remove-duplicates-sorted-array.js) | [LeetCode 26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) |
 | Read/write two pointers | [Move Zeroes](arrays/move-zeroes.md) · [JavaScript](arrays/move-zeroes.js) | [LeetCode 283](https://leetcode.com/problems/move-zeroes/) |
 | Backward two pointers | [Merge Sorted Array](arrays/two-pointers.md#backward-pointers-merge-sorted-array) | [LeetCode 88](https://leetcode.com/problems/merge-sorted-array/) |
