@@ -32,6 +32,14 @@ Use this checklist to revisit problems without consulting the solution. The goal
 | [Selection Sort](sorting/selection-sort.md) | Minimum element selection and swapping | Why does it take O(n²) time even on sorted input, and how does it minimize swaps? |
 | [Merge Sort](sorting/merge-sort.md) | Divide and Conquer + Two Pointers | Why is time O(n log n), space O(n), and how does <= maintain stability? |
 
+## Linked list practice
+
+| Problem | Technique | Self-check |
+| --- | --- | --- |
+| [Design Linked List — 707](https://leetcode.com/problems/design-linked-list/) | Traversal and pointer rewiring | Why stop at index - 1, preserve the next link, and update size exactly once? |
+
+See [Linked List Interview Patterns](linked-list/linked-list-patterns.md) for related exercises.
+
 ## Review checklist
 
 - [ ] Solve the problem again without looking at the previous implementation.
